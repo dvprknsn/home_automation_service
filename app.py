@@ -1,6 +1,8 @@
 from flask import Flask
+import os
 app = Flask(__name__)
+msg = os.environ["SECRET_MSG"]
 
 @app.get("/")
 def hello():
-    return "Hello from revised home_automation_service!"
+    return msg
