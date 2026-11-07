@@ -1,11 +1,9 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask
+from nicegui import ui
 
 load_dotenv() 
 msg = os.environ["SECRET_MSG"]
-app = Flask(__name__)
 
-@app.get("/")
-def hello():
-    return msg
+ui.label(msg)
+ui.run()
